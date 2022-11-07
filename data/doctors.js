@@ -3,12 +3,6 @@ var doctors = mongoCollections.doctors;
 const { ObjectId } = require('mongodb');
 
 module.exports = {
-
-  async getAllDoctor(){
-    const doctorCollection = await doctors()
-    const doctorList = await doctorCollection.find({}).toArray();
-    return doctorList
-},
   async getDoctorBySpec(searchTerm){
 
     if(!searchTerm){
