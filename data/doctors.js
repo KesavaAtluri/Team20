@@ -4,7 +4,12 @@ const { ObjectId } = require('mongodb');
 
 module.exports = {
 
-async getDoctorBySpec(searchTerm){
+  async getAllDoctor(){
+    const doctorCollection = await doctors()
+    const doctorList = await doctorCollection.find({}).toArray();
+    return doctorList
+},
+  async getDoctorBySpec(searchTerm){
 
     if(!searchTerm){
       throw 'No searchTerm was provided'
@@ -44,5 +49,19 @@ async getDoctorBySpec(searchTerm){
       return a.overallRating > b.overallRating;
     });
     return result;
-}
+    },
+    async getDoctorById(id){
+        
+        if (typeof id === 'string') {
+          id = ObjectId(id);
+        } else if (!(id instanceof ObjectId)) {
+          throw 'Invalid type of id:needs to be string';
+        }
+        const doctorCollection = await doctors()
+        let parsedId = ObjectId(id);
+        const doctor = await doctorCollection.findOne({_id: parsedId})
+        if (doctor === null) {throw "No doctor with that id"}
+        return doctor
+      }
+
 };
