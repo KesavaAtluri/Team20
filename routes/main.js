@@ -8,6 +8,7 @@ const users = mongoCollections.users;
 const  xss= require('xss'); // Cross Site Scripting
 
 
+
 router.get('/',async(req,res)=>{
     if(!req.session.user){
         res.render('landingPage');
@@ -28,7 +29,15 @@ router.get('/signup', async(req,res)=>{
     }
 });
 
-
+router.get('/login',async(req,res)=>{
+    if(!req.session.user){
+        res.render('login');
+        return;
+    }else{
+        res.redirect('search');
+        return;
+    }
+});
 router.post('/signup',async(req,res)=>{
     try{
         let fname = xss(req.body.firstName);
@@ -54,6 +63,35 @@ router.post('/signup',async(req,res)=>{
     }
 });
 
+router.post('/login',async(req,res)=>{
+    try{
+        let u_name = xss(req.body.username);
+        let p_sswrd = xss(req.body.password);
+        u_name=u_name.toLowerCase();
+        
+        const getLoggedIn = await usersData.checkUser(u_name,p_sswrd);
+        if(getLoggedIn){
+            let userCollection = await users()
+            req.session.user = {username : u_name};
+            const user = await userCollection.findOne({ username: u_name });
+            req.session.userId = user._id;
+            //console.log(user);
+            res.render('search', { userInfo : user });
+            return;
+        // if (getLoggedIn.authenticated == true) {
+		// 	req.session.user = u_name;
+		// 	res.render('search');
+		} else {
+			res.status(400).render('login', {
+				errorhandled: 'Invalid username or password',
+				hasError: true,
+			});
+		}
+    }catch(e){
+        res.status(400).render('login',{error : e });
+        return;
+    }
+});
 
 router.get('/logout',async(req,res)=>{
     req.session.destroy();
