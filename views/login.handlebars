@@ -1,0 +1,29 @@
+
+<div>
+    <h1>Welcome To Sanjeevni. Please Login</h1>
+    <form action="/login" method="post" id="loginForm">LOGIN
+    <br><br>
+    <label>
+        <input type="text" placeholder="Username" id="username" name="username">
+    </label>
+    <br><br>
+    <label>
+        <input type="password" placeholder="Password" id="password" name="password">
+    </label>
+    <br><br>
+    <label>
+        <input type="submit" value="Submit" id="submit">
+    </label>
+    <br><br>
+    <div id="err_c">
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+    </div>
+    </form>
+    <script src="/public/js/LoginClientSide.js"></script>
+    <br><br>
+    <a href="/signup">Not Joined Sanjeevni yet? Please Sign Up</a>
+    <br><br>
+    <a href="/">Go Back Home</a>
+</div>
