@@ -1,0 +1,69 @@
+<div>
+    <h1> Sanjeevni </h1>
+    <form action="/signup" method="post" id="signupForm">SIGNUP
+    <br><br>
+    <label>
+        <input type="text" placeholder="First Name" id="firstname" name="firstName">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="Last Name" id="lastname" name="lastName">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="DOB (MM/DD/YYYY) " id="dob" name="dob">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="Street" id="street" name="street">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="City" id="city" name="city">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="State" id="state" name="state">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="Zip Code" id="zipcode" name="zipCode">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="Phone Number" id="phonenumber" name="phoneNumber">
+    </label>
+    <br>
+    <label>
+        <input type="text" placeholder="Email Address" id="email" name="email">
+    </label>
+    <br>
+    <br>
+    <label>
+        <input type="text" placeholder="Username" id="username" name="username">
+    </label>
+    <br>
+    <label>
+        <input type="password" placeholder="Password" id="password" name="password">
+    </label>
+    <br><br>
+    <label>
+        <input type="submit" value="Submit" id="submit">
+    </label>
+    <label>
+        <button type="reset" value="reset" id="reset">Clear Form</button>
+    </label>
+    <br>
+    </form>
+    <br><br>
+    <div id="err_c">
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+    </div>
+    <script src="/public/js/SignupClientSide.js"></script>
+    <br>
+    <a href="/login" >Already have a Account? Please Login</a>
+    <br><br>
+    <a href="/">Go Back Home</a>
+</div>
