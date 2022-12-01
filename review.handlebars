@@ -1,0 +1,41 @@
+<h1>Know more about this Doctor</h1>
+<div>
+    <h2>Reviews:</h2>
+    {{#each b}}
+    <ul class='commentList'>
+        <li class='comment'><h3>Review : {{Review_text}}</h3>
+    <h4>Rating : {{Rating}}</h4></li>
+    </ul>
+    {{/each}}
+</div>
+
+<div>
+    <form id="formForComment" method="post" action="../reviews/reviewFromDoc/{{docInfo._id}}">Review On This Doctor
+    <br>
+    <input type="hidden" name="doctorId" id="doctorid" value="{{docInfo._id}}">
+    <br>
+    <label for="subject">Enter Review
+    <br><br>
+    <input type="text" placeholder="Enter Review" id="reviewText" name="reviewText">
+    </label>
+    <br><br>
+    <label for="description" > Enter Rating
+        <br><br>
+    <textarea id="rating" placeholder="Enter Rating" name="rating"></textarea>
+    </label>
+    <br><br>
+    <button type="submit" value="Submit" id="submit3">Submit</button>
+    </form>
+    <br><br>
+    <div id="errorcheck">
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+    </div>
+    <script src="/public/js/ReviewclientSide.js"></script>
+    <a href="/doctors/doctor/{{docInfo._id}}">Back to Feed</a>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
