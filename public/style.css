@@ -1,0 +1,219 @@
+.box-style{
+    -webkit-box-shadow: -1px -1px 10px 7px rgba(0,0,0,0.5);
+    -moz-box-shadow: -3px -2px 20px 10px rgba(0,0,0,0.425);
+     box-shadow: -4px -2px 30px 5px rgba(0,0,0,0.35);
+  }
+  
+  body {
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  
+  header {
+    background-color: lightcyan;
+      border-bottom: 2px solid lightseagreen;
+    height : 70px;      
+    width : 100%;
+    overflow: hidden;
+    text-indent: 15%;
+  }
+  
+  .footer-design {
+    font-size: large;
+      background-color:lightcyan;
+    border-top: 2px solid lightseagreen;
+      color: black !important;
+      bottom : 2px;  
+    height : 70px;  
+    margin-top : 40px;  
+    text-align:center; 
+    position:fixed;
+    width:100%;	
+  }
+  
+  #login{
+    text-align: right;
+    margin-right: 20%;
+  }
+  
+  .dropbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #3e8e41;
+    }
+    
+    #myInput {
+      box-sizing: border-box;
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 12px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    #myInput:focus {outline: 3px solid #ddd;}
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f6f6f6;
+      min-width: 230px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+  
+    .disable{
+        list-style-type: none;
+    }
+  
+    #searchdoc {
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      padding: 5px 5px;
+    }
+  
+  .navbar .navbar-nav .nav-link {
+      color: #000000;
+      font-size: 2em;
+  }
+  .navbar .navbar-nav .nav-link:hover{
+      color: #808080;
+  }
+  .navbar-logo-centered .navbar-nav .nav-link{
+      padding: .5em 1em;
+  }
+  
+  .parentDiv {
+    border: 3px solid #fff;
+    padding: 20px;
+  }
+  
+  .childDiv {
+    width: 33%;
+    height: 74px;
+    float: left;
+    padding: 20px;
+  }
+  
+  .childDiv:nth-child(2) {
+    width: 33%;
+    height: 74px;
+    float: center;
+    padding: 20px;
+  }
+  
+  .childDiv:nth-child(3) {
+    width: 33%;
+    height: 74px;
+    float: right;
+    padding: 20px;
+  } 
+  
+  .header {
+    overflow: hidden;
+    background-color: lightcyan;
+    padding: 20px 10px;
+  }
+  
+  /* Style the header links */
+  .header p {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header p.logo {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header p:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header p.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
