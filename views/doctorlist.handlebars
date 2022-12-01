@@ -1,0 +1,22 @@
+<link href="../public/style.css" rel="stylesheet" type="text/css" />
+<section>
+    <ul>
+    {{#each results}}
+    <li class = "disable">
+    <div class = "box-style" class=""> 
+    <p>Dr. {{this.First_Name}}, {{this.Last_Name}}<p>
+    <p>Speciality: {{this.Speciality}}</p>
+    <p>City: {{this.Address.City}}</p>
+    <p>Online appointment: {{this.Online_Appointments}}</p> 
+    {{#if this.overallRating}}
+    <p>Rating: {{this.overallRating}}</p>
+    {{/if}}
+    <a href="/doctors/doctor/{{this._id}}"><button type="button" class="btn btn-success">Click here to book appointment</button></a>
+    </div>
+    </li>
+    <br><br>
+    {{/each}}
+    </ul>
+    
+     <a class="new" href="../doctors">Click here to go back </a>
+    </section>
