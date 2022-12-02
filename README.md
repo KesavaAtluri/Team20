@@ -40,3 +40,19 @@ Displays 2 search patterns and display all button
 Search pharmacies by:
 Medicine Name
 ZIP CODE
+
+
+
+
+
+To install all dependencies:
+
+Npm install
+
+Then to run seed file
+
+npm run seed
+
+Then to run 
+
+npm start
