@@ -1,0 +1,13 @@
+<link href="../public/main_styles.css" rel="stylesheet" type="text/css" />
+<main>
+    <article>
+        <h2>Thank you for shopping with us!</h2>
+        <p> Your order will be ready in 30 mins, please collect it from the below address: </p>
+        <h3>{{pharmacy.Name}}</h3>
+        <h3>{{#with pharmacy.Address}}</h3>
+        <h3>{{Street}}, {{City}}, {{State}}, {{Zip}}</h3>
+        {{/with}} 
+    </article>
+       <a class="new" href="/pharmacy/">New search</a>
+</main>
+  

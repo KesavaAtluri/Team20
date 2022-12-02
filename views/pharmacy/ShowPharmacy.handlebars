@@ -1,0 +1,39 @@
+<link href="../public/main_styles.css" rel="stylesheet" type="text/css" />
+<main>
+    <article>
+        <h1>{{title}}</h1>
+        <dl>
+            <dt>Pharmacy Name</dt>
+            <dd> {{pharmacy.Name}}</dd>
+            <dt>Address</dt>
+            <dd>{{#with pharmacy.Address}}
+            <dd>{{Street}}, {{City}}, {{State}}, {{Zip}}</dd>
+            {{!-- {{this}} --}}
+            {{/with}}
+            </dd>
+            <dt>Available_Medicine</dt>
+            <dd>
+                <ul>
+                    {{#each pharmacy.Available_Medicine}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </dd>
+            <dt>Reviews</dt>
+            <ol>
+                    {{#each pharmacy.Reviews}}
+                    <li>Review:{{Review_text}}</li>
+                    <ul><li>Rating:&nbsp;{{Rating}}</li></ul>
+                    {{/each}}
+            </ol>
+        </dl>
+
+        <a href="../pharmacy/placeMedOrder/{{pharmacy._id}}">Click here to Place Order</a>
+        <br>
+        <br>
+
+        <a class="new" href="../">Search another Pharmacy</a>
+
+    </article>
+</main>
+

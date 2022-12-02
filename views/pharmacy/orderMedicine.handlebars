@@ -1,0 +1,23 @@
+<main>
+    <article>
+        <link href="../public/main_styles.css" rel="stylesheet" type="text/css" />
+
+            <h1>Placing order from {{pharmacy.Name}}</h1>
+            <h2>Avialble medicines are:</h2>
+            <ul>
+                {{#each pharmacy.Available_Medicine}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+       
+        <h2>Enter your Full Name: <input type="text" > <br/> </h2>
+        <h2>Enter the Medicines Required: <input type="text" > </h2>
+        <br/>
+        <br/>
+        <a href="../pharmacy/submitOrder/{{pharmacy._id}}">Click here to Submit Order</a> 
+    </article>
+</main>
+
+
+
+

@@ -1,0 +1,72 @@
+<link href="../public/main_styles.css" rel="stylesheet" type="text/css" />
+<main>
+    <article>
+        <h1>Pharmacy Finder</h1>
+        <p> This website displays Pharmacies.</p>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img class ="im" src="/public/images/img1.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img class ="im" src="/public/images/img2.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img class ="im" src="/public/images/img3.jpg">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+        <span class="sliderDot" onclick="currentSlide(1)"></span>
+        <span class="sliderDot" onclick="currentSlide(2)"></span>
+        <span class="sliderDot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            slideShow(slideIndex);
+
+            function plusSlides(n) {
+            slideShow(slideIndex += n);
+            }
+            function currentSlide(n) {
+            slideShow(slideIndex = n);
+            }
+            function slideShow(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("sliderDot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            }
+        </script>
+
+        <form action="../pharmacy/searchPharmacies" method="POST" class="form">
+            <button class="form" type="submit" name="pharm" value="all">Show all Pharmacies</button>
+            <br/><br/><br/>
+            <button class="form" type="submit" name="nearpharm" value="nearby">Search nearby Pharmacies:</button>
+            <label for="form">
+                    <input type="text" id="form" name="usersZip" placeholder="Enter your Zip Code"/>
+            </label>
+            <br/><br/><br/>
+            <button class="form" type="submit" name="medspharm" value="meds">Search by Medicine Name:</button>
+            <label for="form">
+                    <input type="text" id="form" name="meds" placeholder="Enter Medicine Name"/>
+            </label>
+        </form>
+   
+    </article>
+    <br>
+    <br>
+    <a class="new" href="/doctors/">Go back to Home</a>
+</main>

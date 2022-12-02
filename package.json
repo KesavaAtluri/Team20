@@ -1,0 +1,26 @@
+{
+  "name": "cs546-finalproject-38-main",
+  "version": "1.0.0",
+  "description": "## ABOUT *SANJEEVNI*",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "seed": "node ./tasks/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax": "^0.0.4",
+    "axios": "^1.1.3",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mongodb": "^4.11.0",
+    "xss": "^1.0.14"
+  }
+}
