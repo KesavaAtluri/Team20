@@ -1,0 +1,45 @@
+<title>{{userInfo.username}} Profile Page</title>
+    <link rel='stylesheet' href='public/css/main_style.css'/>
+    <button id='profileButton' hidden>Profile</button>
+    <div id="profile">
+        <h1>{{userInfo.username}}</h1>
+        <br>
+        <br>
+        <h2> {{userInfo.First_Name}}  {{userInfo.Last_Name}}</h2>
+        <br>
+        <br>
+        <dt>Address</dt>
+            <dd>{{#with userInfo.Address}}
+            <dd>{{Street}}, {{City}}, {{State}}, {{Zip}}</dd>
+            {{!-- {{this}} --}}
+            {{/with}}
+            </dd>
+        <br>
+        <br>
+        <h2>Appointment Details</h2>
+        <div class='table'>
+        <ul class='doctorDisplay'>
+                {{#each doctors}}
+                     <li class='doctorList'> 
+                    <div class="doctorContent">
+                    <a href="/doctor/post/{{_id}}">{{doctorName}}</a>
+                    <p>Created By <a href='/users/profile/{{posterId}}'>{{posterUsername}}</a></p>
+                    </div>
+                    </li>
+                    {{else}}
+                    <p class="not-found">user does not have any appointment.</p>
+                {{/each}}     
+        </ul>
+        </div>
+    </div>
+    <a href="../search">Back to HomePage</a>
+<script>
+        let profileButton = document.getElementById('profileButton')
+        let profile = document.getElementById('profile')
+            
+        
+        profileButton.addEventListener('click',(event)=>{
+            profile.hidden = false;
+            profileButton.hidden = true;
+        })          
+</script>
